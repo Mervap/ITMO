@@ -4,6 +4,9 @@ Parag/
 Special/
 
 #In/output files
+cmake-build-debug/
+cmake-build-release/
+gtest/
 *.in
 *.out
 *.txt
