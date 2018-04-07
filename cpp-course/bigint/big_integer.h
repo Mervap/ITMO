@@ -14,6 +14,7 @@ struct big_integer
     big_integer(big_integer const &other);
     big_integer(int a);
     big_integer(ui a);
+    big_integer(bool new_sign, vector<ui> const &new_data);
     explicit big_integer(std::string const &str);
 
     big_integer& operator=(big_integer const &other);
@@ -64,7 +65,6 @@ struct big_integer
     friend std::string to_string(big_integer const &a);
     void swap(big_integer &other) noexcept;
     bool is_zero() const;
-    big_integer(bool new_sign, vector<ui> const &new_data);
 private:
     bool sign;
     vector<ui> data;
