@@ -23,7 +23,6 @@ RunClojure*
 !objectExpression.js
 !Paradigms/Tests/*/*
 
-
 #In/output files
 cmake-build-debug/
 cmake-build-release/
@@ -79,3 +78,5 @@ out/
 *.cbp
 *.depend
 *.layout
+
+!Paradigms/Tests/artifacts/*/*
