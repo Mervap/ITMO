@@ -21,6 +21,8 @@ RunClojure*
 !CalcSHA256.java
 !functionalExpression.js
 !objectExpression.js
+!Paradigms/Tests/*/*
+
 
 #In/output files
 cmake-build-debug/
