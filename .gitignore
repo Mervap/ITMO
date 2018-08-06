@@ -1,7 +1,26 @@
 #It's lately
-*term2/
-Parag/
+*examples/
+*jstest/
+*base/
+*cljtest/
+*test/
+*target/
 Special/
+
+#Paradigms
+Paradigms/HW*/*
+!Paradigms/HW*/src/
+Paradigms/HW11/*
+RunJS*
+probably*
+BaseTest*
+core*
+examples*
+RunClojure*
+!CalcMD5.java
+!CalcSHA256.java
+!functionalExpression.js
+!objectExpression.js
 
 #In/output files
 cmake-build-debug/
@@ -10,6 +29,8 @@ gtest/
 *.in
 *.out
 *.txt
+*.class
+*.jar
 
 # Prerequisites
 *.d
