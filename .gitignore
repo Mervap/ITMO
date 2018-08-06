@@ -22,6 +22,7 @@ RunClojure*
 !functionalExpression.js
 !objectExpression.js
 !Paradigms/Tests/*/*
+!Paradigms/Tests/artifacts/*/*
 
 #In/output files
 cmake-build-debug/
@@ -77,6 +78,4 @@ out/
 #CodeBlocks
 *.cbp
 *.depend
-*.layout
-
-!Paradigms/Tests/artifacts/*/*
+*.layou
