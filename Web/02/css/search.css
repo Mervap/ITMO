@@ -1,0 +1,14 @@
+header nav {
+    position: relative;
+}
+
+header nav form {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+}
+
+header nav form input {
+    padding: 1px 1px 1px 20px;
+    background: #f4f4f4 url(../img/search-16x16.png) 2px 2px no-repeat;
+}

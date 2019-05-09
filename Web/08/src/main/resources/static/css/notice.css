@@ -1,0 +1,100 @@
+.notice .notice-box {
+    border: 1px solid var(--border-color);
+    border-top-right-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
+    width: 30rem;
+    margin: 0 auto;
+}
+
+.notice .notice-box .header {
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.25rem;
+    font-weight: bold;
+    color: var(--caption-color);
+}
+
+.notice .notice-box .header:before {
+    content: "→";
+}
+
+.notice .notice-box .body {
+    padding: 1rem;
+}
+
+.notice .notice-box .author {
+    padding-left: 1rem;
+    color: var(--info-color);
+}
+
+.notice .notice-box .tags {
+    font-size: 0.75rem;
+    color: var(--info-color);
+}
+
+.notice .notice-box .tags {
+    padding-left: 1rem;
+}
+
+.notice .notice-box .tags span:first-child:before {
+    content: "Tags: ";
+}
+
+.notice .notice-box .tags span:not(:last-child):after {
+    content: ", ";
+}
+
+.notice .add-comment-form {
+    margin: 1rem 0;
+}
+
+.notice .add-comment-form .field {
+    margin: 0.5rem 0;
+    overflow: hidden;
+}
+
+.notice .add-comment-form .field .comment-header {
+    margin-left: 1.5rem;
+    float: top;
+}
+
+.notice .add-comment-form .field .comment-text {
+    width: 93%;
+}
+
+.notice .add-comment-form .field textarea {
+    margin: 0 1.5rem;
+    width: 100%;
+}
+
+.notice .add-comment-form .button-field {
+    margin: 0.5rem;
+    text-align: center;
+}
+
+.notice .add-comment-form .button-field input {
+    padding: 0.1rem 1.5rem;
+}
+
+.notice .add-comment-form .field .error::before {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.notice .add-comment-form form .error {
+    font-size: 0.75rem;
+    color: var(--error-color);
+    margin-left: 1.5rem;
+}
+
+.notice .comments section {
+    margin: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.notice .comments section .header, .notice .comments section .author {
+    margin: 0.2rem 0;
+    font-size: 0.85rem;
+    color: var(--info-color);
+}
+

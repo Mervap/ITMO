@@ -1,0 +1,79 @@
+.talks-box {
+    border: 1px solid var(--border-color);
+    border-top-right-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
+    width: 70%;
+    margin: 0 auto;
+}
+
+.talks-box .header {
+    border-bottom: 1px solid var(--border-color);
+    color: var(--caption-color);
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+}
+
+.talks-box .field {
+    margin: 1.5rem 0;
+    overflow: hidden;
+}
+
+.talks-box .field .name {
+    margin-left: 1.5rem;
+    float: top;
+}
+
+.talks-box .field .text-value {
+    width: 93%;
+}
+
+.talks-box .field input {
+    margin: 0 1.5rem;
+}
+
+.talks-box .field textarea {
+    margin: 0 1.5rem;
+    width: 100%;
+}
+
+.talks-box .button-field {
+    margin: 1.5rem;
+    text-align: center;
+}
+
+.talks-box .button-field input {
+    padding: 0.1rem 1.5rem;
+}
+
+.talks-box form > .error {
+    margin: auto;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--error-color);
+    position: relative;
+    top: -1rem;
+}
+
+.talks-box .body {
+    padding: 1rem;
+}
+
+.talks-box .body p {
+    margin: 0.3rem 0;
+}
+
+.talks-box .body p .talk-target, .talks-box .body p .talk-source {
+    font-weight: bold;
+}
+
+.talks-box .body p .talk-text {
+    word-wrap: break-word
+}
+
+.talks-box .body p .talk-target:before {
+    content: " → ";
+}
+
+.talks-box .body p .talk-text:before {
+    content: " : ";
+}

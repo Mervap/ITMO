@@ -1,0 +1,42 @@
+.add {
+    border: 1px solid var(--border-color);
+    border-top-right-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
+    width: 80%;
+    margin: 0 auto;
+}
+
+.add .header {
+    border-bottom: 1px solid var(--border-color);
+    color: var(--caption-color);
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+}
+
+.add .field {
+    margin: 1.5rem 0;
+    overflow: hidden;
+}
+
+.add .field .text-name {
+    margin-left: 1.5rem;
+    float: top;
+}
+
+.add .field .text-value {
+    width: 93%;
+}
+
+.add .field textarea {
+    margin: 0 1.5rem;
+    width: 100%;
+}
+
+.add .button-field {
+    margin: 1.5rem;
+    text-align: center;
+}
+
+.add .button-field input {
+    padding: 0.1rem 1.5rem;
+}

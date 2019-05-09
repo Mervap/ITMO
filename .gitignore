@@ -4,8 +4,19 @@
 *base/
 *cljtest/
 *test/
-*target/
+*/target/
 Special/
+*/term4/2/
+MatlogLabs/
+
+#Java
+*javadoc/
+
+#Web
+Web/*/target
+*profile.properties
+*.iml
+*node_modules/
 
 #Paradigms
 Paradigms/HW*/*
@@ -67,6 +78,7 @@ gtest/
 *.app
 
 #Idea
+.mvn/
 .gradle/
 .idea/
 cmake-build-debug/

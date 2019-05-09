@@ -1,0 +1,127 @@
+.article-box {
+    border: 1px solid var(--border-color);
+    border-top-right-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
+    width: 90%;
+    margin: 0 auto;
+}
+
+.article-box .header {
+    border-bottom: 1px solid var(--border-color);
+    color: var(--caption-color);
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+}
+
+.article-box .field {
+    margin: 1.5rem 0;
+    overflow: hidden;
+}
+
+.article-box .field .name {
+    margin-left: 1.5rem;
+    float: top;
+}
+
+.article-box .field .text-value {
+    width: 93%;
+}
+
+.article-box .field input {
+    margin: 0 1.5rem;
+    width: 50%;
+}
+
+.article-box .field textarea {
+    margin: 0 1.5rem;
+    width: 100%;
+}
+
+.article-box .button-field {
+    margin: 1.5rem;
+    text-align: center;
+}
+
+.article-box .button-field input {
+    padding: 0.1rem 1.5rem;
+}
+
+.article-box form > .error {
+    margin: auto;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--error-color);
+    position: relative;
+    top: -1rem;
+}
+
+.talks-box .body p .talk-text:before {
+    content: " : ";
+}
+
+main div.articles > ul {
+    padding-left: 0;
+}
+
+main div.articles > ul li {
+    list-style-type: none;
+    margin-top: 1rem;
+}
+
+main div.articles > div.article {
+    list-style-type: none;
+    margin-top: 1rem;
+}
+
+main article .title {
+    color: var(--caption-color);
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+main article .information {
+    color: var(--border-color);
+    font-size: 0.95rem;
+    margin-top: 0.3rem;
+}
+
+main article .body {
+    padding-left: 1rem;
+    border-left: 4px solid #B9B9B9;
+}
+
+main article .body :last-child {
+    -webkit-margin-after: 0;
+}
+
+main article .footer {
+    margin-top: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 0.5rem;
+}
+
+main article .footer .left, main article .footer .right {
+    display: inline;
+}
+
+main article .footer .right {
+    float: right;
+    font-size: 0.96rem;
+    margin: 0.1rem;
+}
+
+main article .footer .positive-score {
+    font-weight: bold;
+    color: green;
+}
+
+main article .footer .left *, .right * {
+    vertical-align: middle;
+}
+
+main article .footer .right > img {
+    position: relative;
+    top: -0.1rem;
+    margin-left: 0.5rem;
+}
