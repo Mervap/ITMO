@@ -1,0 +1,95 @@
+start: s
+accept: ac
+reject: rj
+blank: e
+
+s 0 -> s 0 >
+s 1 -> s 1 >
+s < -> next_< # >
+
+next_< 0 -> next_0 < >
+next_< 1 -> next_1 < >
+
+next_0 0 -> next_0 0 >
+next_0 1 -> next_1 0 >
+next_0 e -> next_# 0 >
+
+next_1 0 -> next_0 1 >
+next_1 1 -> next_1 1 >
+next_1 e -> next_# 1 >
+
+next_# e -> size_swap_s # <
+
+size_swap_s 0 -> size_swap_s_0 # > 
+size_swap_s 1 -> size_swap_s_1 # > 
+size_swap_s < -> check_f_e_# < <
+
+size_swap_s_0 # -> size_to_< 0 < 
+size_swap_s_1 # -> size_to_< 1 <
+
+size_to_< 0 -> size_to_< 0 <
+size_to_< 1 -> size_to_< 1 <
+size_to_< # -> size_to_< # <
+size_to_< < -> size_to_# < <
+
+size_to_# 0 -> size_to_# 0 <
+size_to_# 1 -> size_to_# 1 <
+size_to_# # -> size_swap_f # <
+
+size_swap_f 0 -> size_swap_f_0 # > 
+size_swap_f 1 -> size_swap_f_1 # > 
+size_swap_f e -> ac e ^
+
+size_swap_f_0 # -> size_to_s< 0 >
+size_swap_f_1 # -> size_to_s< 1 >
+
+size_to_s< 0 -> size_to_s< 0 >
+size_to_s< 1 -> size_to_s< 1 >
+size_to_s< # -> size_to_s< # >
+size_to_s< < -> size_to_s# < >
+
+size_to_s# 0 -> size_to_s# 0 >
+size_to_s# 1 -> size_to_s# 1 >
+size_to_s# # -> size_swap_s # <
+
+check_f_e_# 0 -> check_f_e_# 0 <
+check_f_e_# 1 -> check_f_e_# 1 <
+check_f_e_# < -> check_f_e_# < <
+check_f_e_# # -> check_f_e # <
+
+check_f_e e -> compare e >
+
+compare # -> compare # >
+compare < -> rj < ^
+compare 0 -> compare_0_# 0 >
+compare 1 -> compare_1_# 1 >
+
+compare_0_# 0 -> compare_0_# 0 >
+compare_0_# 1 -> compare_0_# 1 >
+compare_0_# < -> compare_0_# < >
+compare_0_# # -> compare_0 # >
+
+compare_0 0 -> swap_s_0 # < 
+compare_0 1 -> ac 1 ^
+
+compare_1_# 0 -> compare_1_# 0 >
+compare_1_# 1 -> compare_1_# 1 >
+compare_1_# < -> compare_1_# < >
+compare_1_# # -> compare_1 # >
+
+compare_1 0 -> rj 0 ^
+compare_1 1 -> swap_s_1 # <
+
+swap_s_0 # -> to_# 0 <
+swap_s_1 # -> to_# 1 <
+
+to_# 0 -> to_# 0 <
+to_# 1 -> to_# 1 <
+to_# < -> to_# < <
+to_# # -> swap_f # >
+
+swap_f 0 -> swap_f_0 # <
+swap_f 1 -> swap_f_1 # <
+
+swap_f_0 # -> compare 0 >
+swap_f_1 # -> compare 1 >

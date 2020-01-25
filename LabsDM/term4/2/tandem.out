@@ -1,0 +1,110 @@
+start: s
+accept: ac
+reject: rj
+blank: e
+
+s 0 -> s_0_$ # <
+s 1 -> s_1_$ # <
+
+s_0_$ e -> s_0_# $ <
+s_1_$ e -> s_1_# $ <
+
+s_0_# e -> s_# 0 <
+s_1_# e -> s_# 1 <
+
+s_# e -> check # ^
+
+check 0 -> check 0 >
+check 1 -> check 1 >
+check # -> check_get # >
+
+check_get 0 -> check_0_$ 0 >
+check_get 1 -> check_1_$ 1 >
+check_get $ -> check_end $ >
+
+check_0_$ 0 -> check_0_$ 0 >
+check_0_$ 1 -> check_0_$ 1 > 
+check_0_$ $ -> check_0_# $ >
+
+check_0_# 0 -> check_0_# 0 >
+check_0_# 1 -> check_0_# 1 >
+check_0_# # -> check_0 # >
+
+check_0 0 -> swap_0_f # <
+check_0 1 -> clear 1 <
+check_0 e -> rj e ^
+
+check_1_$ 0 -> check_1_$ 0 >
+check_1_$ 1 -> check_1_$ 1 > 
+check_1_$ $ -> check_1_# $ >
+
+check_1_# 0 -> check_1_# 0 >
+check_1_# 1 -> check_1_# 1 >
+check_1_# # -> check_1 # >
+
+check_1 1 -> swap_1_f # <
+check_1 0 -> clear 0 <
+check_1 e -> rj e ^
+
+swap_0_f # -> to_sec 0 <
+swap_1_f # -> to_sec 1 <
+
+to_sec 0 -> to_sec 0 <
+to_sec 1 -> to_sec 1 <
+to_sec $ -> to_sec $ <
+to_sec # -> swap_s # >
+
+swap_s 0 -> swap_0_s # <
+swap_s 1 -> swap_1_s # <
+
+swap_0_s # -> check 0 ^
+swap_1_s # -> check 1 ^
+
+check_end 0 -> check_end 0 >
+check_end 1 -> check_end 1 >
+check_end # -> check_end_# # >
+
+check_end_# 0 -> clear 0 <
+check_end_# 1 -> clear 1 <
+check_end_# e -> ac e ^
+
+clear # -> swap_f # <
+
+swap_f 0 -> swap_f_0 # >
+swap_f 1 -> swap_f_1 # >
+swap_f $ -> clear_s $ <
+
+swap_f_0 # -> clear 0 <
+swap_f_1 # -> clear 1 <
+
+clear_s 0 -> clear_s 0 <
+clear_s 1 -> clear_s 1 <
+clear_s # -> swap_ss # <
+
+swap_ss 0 -> swap_ss_0 # >
+swap_ss 1 -> swap_ss_1 # >
+swap_ss e -> next e >
+
+swap_ss_0 # -> clear_s 0 <
+swap_ss_1 # -> clear_s 1 <
+
+next 0 -> next 0 >
+next 1 -> next 1 >
+next # -> next # >
+next $ -> swap_next $ >
+
+swap_next # -> swap_next # >
+swap_next 0 -> swap_next_0 # <
+swap_next 1 -> swap_next_1 # <
+
+swap_next_0 # -> swap_next_0 $ <
+swap_next_0 $ -> to_st 0 <
+swap_next_1 # -> swap_next_1 $ <
+swap_next_1 $ -> to_st 1 <
+
+
+
+to_st 0 -> to_st 0 <
+to_st 1 -> to_st 1 <
+to_st # -> to_st # <
+to_st e -> check e >

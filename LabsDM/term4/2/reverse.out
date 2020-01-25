@@ -1,0 +1,37 @@
+start: s
+accept: ac
+reject: rj
+blank: e
+
+s 0 -> zero e >
+s 1 -> one e >
+
+zero 0 -> zero 0 >
+zero 1 -> one 0 >
+zero e -> add_0 e >
+
+one 0 -> zero 1 >
+one 1 -> one 1 >
+one e -> add_1 e >
+
+add_0 0 -> add_0 0 >
+add_0 1 -> add_0 1 >
+add_0 e -> ret 0 <
+
+add_1 0 -> add_1 0 >
+add_1 1 -> add_1 1 >
+add_1 e -> ret 1 <
+
+ret 0 -> ret 0 <
+ret 1 -> ret 1 <
+ret e -> check e <
+
+check 0 -> sret 0 <
+check 1 -> sret 1 <
+check e -> end e >
+
+end e -> ac e >
+
+sret 0 -> sret 0 <
+sret 1 -> sret 1 <
+sret e -> s e >

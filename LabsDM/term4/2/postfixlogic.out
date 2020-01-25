@@ -1,0 +1,46 @@
+1
+S 0 -> S 0 >
+S 1 -> S 1 >
+S o -> calc_or o <
+S a -> calc_and a <
+S _ -> AC _ <
+
+calc_or 0 -> calc_or_s 0 <
+calc_or 1 -> calc_or_s 1 <
+calc_or _ -> calc_or _ <
+
+calc_or_s 0 -> calc_or_ss _ >
+calc_or_s 1 -> calc_or_1 _ >
+calc_or_s o -> S 0 >
+calc_or_s _ -> calc_or_s _ <
+
+calc_or_ss 0 -> calc_or_ss _ >
+calc_or_ss 1 -> calc_or_1 _ >
+calc_or_ss o -> S 0 >
+calc_or_ss _ -> calc_or_ss _ >
+
+calc_or_1 0 -> calc_or_1 _ >
+calc_or_1 1 -> calc_or_1 _ >
+calc_or_1 o -> S 1 >
+calc_or_1 _ -> calc_or_1 _ >
+
+calc_and 0 -> calc_and_s 0 <
+calc_and 1 -> calc_and_s 1 <
+calc_and _ -> calc_and _ <
+
+calc_and_s 0 -> calc_and_0 _ >
+calc_and_s 1 -> calc_and_ss _ >
+calc_and_s a -> S 1 >
+calc_and_s _ -> calc_and_s _ <
+
+calc_and_ss 0 -> calc_and_0 _ >
+calc_and_ss 1 -> calc_and_ss _ >
+calc_and_ss a -> S 1 >
+calc_and_ss _ -> calc_and_ss _ >
+
+calc_and_0 0 -> calc_and_0 _ >
+calc_and_0 1 -> calc_and_0 _ >
+calc_and_0 a -> S 0 >
+calc_and_0 _ -> calc_and_0 _ >
+
+

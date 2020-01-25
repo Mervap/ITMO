@@ -1,0 +1,20 @@
+E ::= E or X | X
+X ::= X xor C | C   ----   X ::= C xor X | C
+C ::= C and N | N
+N ::= not V | V
+V ::= <variable> | B | ( E )
+B ::= true | false
+
+E  -> X E'
+E' -> _
+E' -> or X E'
+X  -> C X'
+X' -> _
+X' -> xor C X'   ----   X' -> xor X
+C  -> N C'
+C' -> _
+C' -> and N C'
+N  -> not V
+N  -> V
+V  -> <variable> | B | ( E )
+B  -> true | false

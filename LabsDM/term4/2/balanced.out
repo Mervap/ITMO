@@ -1,0 +1,49 @@
+start: s
+accept: ac
+reject: rj
+blank: e
+
+s e -> ac e ^
+s ( -> sw ( >
+s ) -> rj e ^
+
+sw ( -> sw ( >
+sw ) -> last e >
+sw e -> rj e ^
+
+last ( -> last ( >
+last ) -> last ) >
+last e -> shl e <
+
+shl ( -> shl_l e < 
+shl ) -> shl_r e <
+shl e -> check e <
+
+shl_l ( -> shl_l ( < 
+shl_l ) -> shl_r ( <
+shl_l e -> check ( < 
+
+shl_r ( -> shl_l ) < 
+shl_r ) -> shl_r ) <
+shl_r e -> check ) <
+
+check ( -> first e <
+check ) -> rj ) ^
+check e -> rj e ^
+
+first ( -> first ( <
+first ) -> first ) <
+first e -> shr e >
+
+shr ( -> shr_l e > 
+shr ) -> shr_r e >
+shr e -> s e >
+
+shr_l ( -> shr_l ( > 
+shr_l ) -> shr_r ( >
+shr_l e -> s ( ^
+
+shr_r ( -> shr_l ) > 
+shr_r ) -> shr_r ) >
+shr_r e -> s ) ^
+

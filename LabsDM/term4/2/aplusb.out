@@ -1,0 +1,36 @@
+start: s
+accept: ac
+reject: rj
+blank: e
+
+s 0 -> s 0 >
+s 1 -> s 1 >
+s + -> to_end + >
+
+to_end 0 -> to_end 0 >
+to_end 1 -> to_end 1 > 
+to_end e -> sub e <
+
+sub 0 -> sub 1 <
+sub 1 -> back 0 <
+sub + -> pre_delete + >
+
+back 0 -> back 0 <
+back 1 -> back 1 <
+back + -> add + <
+
+add 0 -> s 1 >
+add 1 -> add 0 <
+add e -> s 1 >
+
+pre_delete 0 -> pre_delete 0 >
+pre_delete 1 -> pre_delete 1 >
+pre_delete e -> delete e <
+
+delete 0 -> delete e <
+delete 1 -> delete e <
+delete + -> finish e <
+
+finish 0 -> finish 0 <
+finish 1 -> finish 1 <
+finish e -> ac e >

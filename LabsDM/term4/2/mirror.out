@@ -1,0 +1,29 @@
+start: s
+accept: ac
+reject: rj
+blank: e
+
+s 0 -> s 0 >
+s 1 -> s 1 >
+s e -> mir # <
+
+mir 0 -> mir_0 # >
+mir 1 -> mir_1 # >
+mir e -> delete e >
+
+mir_0 # -> add_0 0 >
+mir_1 # -> add_1 1 >
+
+add_0 0 -> add_0 0 >
+add_0 1 -> add_0 1 >
+add_0 e -> to_# 0 <
+
+add_1 0 -> add_1 0 >
+add_1 1 -> add_1 1 >
+add_1 e -> to_# 1 <
+
+to_# 0 -> to_# 0 <
+to_# 1 -> to_# 1 <
+to_# # -> mir # <
+
+delete # -> ac e >
