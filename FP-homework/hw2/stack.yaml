@@ -1,0 +1,8 @@
+resolver: lts-14.27
+
+extra-deps:
+  - readline-1.0.3.0@sha256:db011062b90fbfbbc8b02666d835742c1d4de1f990a89fc056ef8082f3e3cba0
+
+flags: {}
+
+extra-package-dbs: []

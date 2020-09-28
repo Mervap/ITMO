@@ -1,0 +1,26 @@
+name:                practice5
+version:             0.1.0.0
+synopsis:            Template for practice 5
+description:         Practice 5 for FP ITMO course
+
+homepage:            https://github.com/Mervap/FP-homework/tree/master/practice5#readme
+license:             MIT
+license-file:        LICENSE
+author:              Mervap
+maintainer:          megavaprold@gmail.com
+copyright:           2019 Mervap
+
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+tested-with:         GHC == 8.0.1
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Task1
+  ghc-options:         -Wall
+  build-depends:       base >= 4.9 && < 5,
+                       containers,
+                       mtl
+  default-language:    Haskell2010

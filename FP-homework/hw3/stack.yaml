@@ -1,0 +1,9 @@
+resolver: lts-14.27
+
+extra-deps:
+  - stm-containers-1.1.0.4
+  - stm-hamt-1.2.0.4
+
+flags: {}
+
+extra-package-dbs: []

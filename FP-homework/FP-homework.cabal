@@ -1,0 +1,26 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: a7e2e804e42ae64d222eafec398d430da1ca887ddcc8de50882d7087ad60b770
+
+name:           FP-homework
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/Github username here/FP-homework#readme>
+homepage:       https://github.com/Github username here/FP-homework#readme
+bug-reports:    https://github.com/Github username here/FP-homework/issues
+author:         Author name here
+maintainer:     Author email here
+copyright:      2019 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/Mervap/FP-homework

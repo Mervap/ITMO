@@ -1,0 +1,18 @@
+resolver: lts-14.27
+
+packages:
+  - hw0
+  - hw1
+  - hw1-second-chance
+  - hw2
+  - hw3
+  - practice2
+  - practice3
+  - practice4
+  - practice5
+
+extra-deps: []
+
+flags: {}
+
+extra-package-dbs: []
