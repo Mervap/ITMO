@@ -1,0 +1,11 @@
+pi{StudentId}(
+  sigma{StudentId = ExpectedStudentId}(
+    pi{StudentId, CourseId}(Marks) 
+    gdiv 
+    rename{ExpectedStudentId = StudentId}(
+      pi{CourseId, StudentId}(
+        sigma{LecturerName = :LecturerName}(Plan njoin Lecturers njoin Students)
+      )
+    )
+  )
+)

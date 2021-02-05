@@ -1,0 +1,13 @@
+select distinct StudentId, StudentName, GroupName
+  from Students, Groups, Plan, Courses
+  where Students.GroupId = Groups.GroupId and
+        Students.GroupId = Plan.GroupId and
+        Plan.CourseId = Courses.CourseId and
+        CourseName = :CourseName and
+        StudentId not in (
+          select Students.StudentId 
+            from Students, Marks, Courses
+            where Students.StudentId = Marks.StudentId and
+                  Marks.CourseId = Courses.CourseId and
+                  CourseName = :CourseName
+        );

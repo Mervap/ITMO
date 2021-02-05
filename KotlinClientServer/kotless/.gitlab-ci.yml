@@ -1,0 +1,13 @@
+image: openjdk:11
+
+pages:
+  script:
+    - mkdir public
+    - ./gradlew build
+    - ./gradlew browserDistribution
+    - cp -a client/build/distributions/. public/
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == "project-branch"

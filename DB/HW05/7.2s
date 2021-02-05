@@ -1,0 +1,9 @@
+select CourseName, GroupName from (
+  select Marks.CourseId, Students.GroupId from Marks, Students
+  except
+  select CourseId, GroupId from (
+    select Students.StudentId, Marks.CourseId, Students.GroupId from Marks, Students
+    except
+    select Students.StudentId, Marks.CourseId, Students.GroupId from Marks natural join Students
+  ) Q1
+) Q2 natural join Courses natural join Groups

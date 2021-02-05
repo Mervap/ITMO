@@ -1,0 +1,6 @@
+  select StudentName, AvgMark from (
+    Students
+    left join
+    (select StudentId, cast(sum(Mark) as real) / count(*) as AvgMark from Marks group by StudentId) Q1
+    on Students.StudentId = Q1.StudentId
+  );

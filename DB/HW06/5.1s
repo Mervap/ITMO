@@ -1,0 +1,15 @@
+select GroupId, CourseId
+  from Groups, Courses
+  where not exists (
+    select G2.GroupId, C2.CourseId
+      from Groups G2, Courses C2, Students
+      where Students.GroupId = Groups.GroupId and
+            Groups.GroupId = G2.GroupId and
+            Courses.CourseId = C2.CourseId and 
+            not exists (
+              select StudentId, CourseId, Mark
+                from Marks 
+                where Marks.StudentId = Students.StudentId and 
+                      Marks.CourseId = C2.CourseId
+            )
+  );

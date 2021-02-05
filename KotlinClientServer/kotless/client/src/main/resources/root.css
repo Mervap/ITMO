@@ -1,0 +1,25 @@
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  color: #353535;
+  font-family: 'Roboto', sans-serif;
+}
+
+.root {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.text-link {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+div.MuiInputAdornment-positionEnd {
+  height: 1.5rem;
+}

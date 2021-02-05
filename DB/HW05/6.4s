@@ -1,0 +1,12 @@
+select StudentId from (
+  select Marks.StudentId, Students.StudentId as ExpectedStudentId from Marks, (Plan natural join Lecturers natural join Students)
+    where LecturerName = :LecturerName
+  except
+  select StudentId, ExpectedStudentId from (
+    select Marks.StudentId, Students.StudentId as ExpectedStudentId, Plan.CourseId from Marks, (Plan natural join Lecturers natural join Students)
+      where LecturerName = :LecturerName
+    except
+    select Marks.StudentId, Students.StudentId as ExpectedStudentId, Plan.CourseId from Marks natural join Plan natural join Lecturers natural join Students
+      where LecturerName = :LecturerName
+  ) Q1
+) Q2 where StudentId = ExpectedStudentId

@@ -1,0 +1,15 @@
+select StudentId, Total, Passed, Total - Passed as Failed
+from (
+    (select Students.StudentId, coalesce(Passed, 0) as Passed from
+      Students 
+      left join (
+        select StudentId, count(Mark) as Passed from Marks natural join Students natural join Plan group by StudentId
+      ) Q1 
+      on Students.StudentId = Q1.StudentId
+    ) Q2
+    natural join
+    (select StudentId, coalesce(count(distinct CourseId), 0) as Total 
+       from (Students left join Plan on Students.GroupId = Plan.GroupId) group by StudentId
+    ) Q4
+);
+

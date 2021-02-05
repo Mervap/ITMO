@@ -1,0 +1,11 @@
+select StudentName, CourseName from (
+  select Students.StudentId, StudentName, CourseName
+    from Students, Plan, Courses
+    where Students.GroupId = Plan.GroupId and 
+          Plan.CourseId = Courses.CourseId
+  union
+  select Students.StudentId, StudentName, CourseName 
+    from Students, Marks, Courses
+    where Students.StudentId = Marks.StudentId and 
+          Marks.CourseId = Courses.CourseId
+) Q;

@@ -1,0 +1,50 @@
+buildscript {
+    ext.kotlin_version = '1.4.10'
+
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven { url "https://kotlin.bintray.com/kotlin-numpy" }
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'org.jetbrains:kotlin-numpy:0.1.4'
+    }
+}
+
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm' version '1.4.10'
+}
+
+group 'com.itmo'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven { url "https://kotlin.bintray.com/kotlin-numpy" }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation 'org.jetbrains:kotlin-numpy:0.1.4'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.itmo.MainKt'
+        attributes 'Implementation-Version': '0.1.4'
+    }
+    from { configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    destinationDirectory.set(project.file('../Python'))
+    archiveFileName.set("kotlin.jar")
+}
+
+compileKotlin {
+    kotlinOptions { jvmTarget = "11" }
+}
+compileTestKotlin {
+    kotlinOptions { jvmTarget = "11" }
+}

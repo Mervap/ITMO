@@ -1,0 +1,9 @@
+select distinct StudentId from Marks
+except
+select StudentId from (
+  select distinct Marks.StudentId, Plan.CourseId from Marks, (Plan natural join Lecturers)
+    where Lecturers.LecturerName = :LecturerName
+  except
+  select StudentId, CourseId from Marks
+) Q;
+

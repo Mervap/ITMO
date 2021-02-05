@@ -1,0 +1,32 @@
+3
+role_id, project_id -> name, description
+person_id, role_id, project_id -> grant_date
+person_id, project_id -> join_date
+
+1
+project, name -> description
+
+1
+id -> title, comment, process, expiry_date
+
+1
+StudentId, CourseId -> Mark
+
+
+
+StudentId -> StudentName, GroupId
+GroupId -> GroupName
+GroupName -> GroupId
+CourseId -> CourseName
+CourseName -> CourseId
+LecturerId -> LecturerName
+GroupId, CourseId -> LecturerId
+StudentId, CourseId, LecturerId -> Mark
+
+StudentId -> StudentName
+StudentId -> GroupId
+GroupId -> GroupName
+CourseId -> CourseName
+LecturerId -> LecturerName
+GroupId, CourseId -> LecturerId
+StudentId, CourseId -> Mark
