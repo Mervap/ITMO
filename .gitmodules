@@ -1,0 +1,33 @@
+[submodule "SoftwareTesting"]
+	path = SoftwareTesting
+	url = https://github.com/Mervap/SoftwareTesting.git
+[submodule "OptimizationMethods"]
+	path = OptimizationMethods
+	url = https://github.com/Mervap/OptimizationMethods.git
+[submodule "OS/os-net-multiplexing"]
+	path = OS/os-net-multiplexing
+	url = https://github.com/Mervap/os-net-multiplexing.git
+[submodule "OS/os-signal"]
+	path = OS/os-signal
+	url = https://github.com/Mervap/os-signal.git
+[submodule "OS/os-net-descriptor-passing"]
+	path = OS/os-net-descriptor-passing
+	url = https://github.com/Mervap/os-net-descriptor-passing.git
+[submodule "OS/os-net"]
+	path = OS/os-net
+	url = https://github.com/Mervap/os-net.git
+[submodule "OS/os-jit"]
+	path = OS/os-jit
+	url = https://github.com/Mervap/os-jit.git
+[submodule "OS/os-find"]
+	path = OS/os-find
+	url = https://github.com/Mervap/os-find.git
+[submodule "OS/os-kidshell"]
+	path = OS/os-kidshell
+	url = https://github.com/Mervap/os-kidshell.git
+[submodule "OS/Snake"]
+	path = OS/Snake
+	url = https://github.com/Mervap/Snake.git
+[submodule "numerical-methods"]
+	path = numerical-methods
+	url = https://github.com/mikeTerentev/numerical-methods
