@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css" media="screen"/>
+    <title>Hw2</title>
+    <script>
+        function tryLogin(f) {
+            let req = new XMLHttpRequest();
+            req.onload = () => {
+                if (req.status === 200) {
+                    window.location.replace("/index")
+                } else {
+                    alert(req.responseText)
+                }
+            }
+            req.open('POST', '/login', true);
+            let data = new URLSearchParams();
+            new FormData(f).forEach((value, key) => { data.append(key, value) });
+            req.send(data);
+        }
+    </script>
+</head>
+<body>
+<main>
+    <form onsubmit="tryLogin(this); return false;">
+        <div class="container">
+            <h2>Login</h2>
+            <input type="text" placeholder="Login" name="login" required>
+            <hr>
+            <input type="password" placeholder="Password" name="password" required>
+            <hr>
+            <div>
+                <button type="submit" class="login">Login</button>
+            </div>
+        </div>
+
+        <div class="container signup">
+            <p>Not have an account? <a href="/register">Sign up</a>.</p>
+        </div>
+    </form>
+</main>
+</body>
+</html>

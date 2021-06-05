@@ -1,0 +1,45 @@
+main {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    padding: 16px;
+}
+
+input, select {
+    width: 40%;
+    padding: 12px;
+    margin: 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+hr {
+    width: 0;
+}
+
+input:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.register, .login {
+    background-color: #1565C0;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.register:hover, .login:hover {
+    opacity: 1;
+}
+
+.signin, .signup {
+    background-color: #f1f1f1;
+}

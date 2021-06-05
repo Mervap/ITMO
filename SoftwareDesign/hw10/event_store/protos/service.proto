@@ -1,0 +1,88 @@
+syntax = "proto3";
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+
+option java_package = "me.mervap.message";
+option java_multiple_files = true;
+
+package me.mervap;
+
+service EventStoreService {
+  // Commands
+  rpc buySubscription(GUpdateSubscription) returns (CommandResponse) {}
+  rpc extendSubscription(GUpdateSubscription) returns (CommandResponse) {}
+  rpc tryEnter(GTurnstileEvent) returns (CommandResponse) {}
+  rpc exit(GTurnstileEvent) returns (google.protobuf.Empty) {}
+
+  // Queries
+  rpc getAllSubscriptions(google.protobuf.Empty) returns (GSubscriptionInfoList) {}
+  rpc getStat(google.protobuf.Empty) returns (GStatList) {}
+  rpc findNameById(google.protobuf.StringValue) returns (GUserName) {}
+  rpc findPurchaseDateById(google.protobuf.StringValue) returns (google.protobuf.Timestamp) {}
+
+  // Commands Subscribe
+  rpc subscribeOnCommands(google.protobuf.Int32Value) returns (CommandResponse) {}
+  rpc unsubscribeFromCommands(google.protobuf.Int32Value) returns (google.protobuf.Empty) {}
+}
+
+service CommandSubscriptionService {
+  rpc buySubscriptionCommand(GUpdateSubscription) returns (google.protobuf.Empty) {}
+  rpc extendSubscriptionCommand(GUpdateSubscription) returns (google.protobuf.Empty) {}
+  rpc tryEnterCommand(GTurnstileEvent) returns (google.protobuf.Empty) {}
+  rpc exitCommand(GTurnstileEvent) returns (google.protobuf.Empty) {}
+}
+
+message CommandResponse {
+  bool ok = 1;
+  string message = 2;
+}
+
+message GUserName {
+  string firstName = 1;
+  string lastName = 2;
+}
+
+enum GPeriod {
+  DAY = 0;
+  WEEK = 1;
+  MONTH = 2;
+  MONTH_3 = 3;
+  YEAR = 4;
+}
+
+message GUpdateSubscription {
+  string id = 1;
+  GUserName userName = 2;
+  google.protobuf.Timestamp purchaseDate = 3;
+  GPeriod period = 4;
+}
+
+message GSubscriptionInfo {
+  string id = 1;
+  GUserName userName = 2;
+  google.protobuf.Timestamp expireDate = 3;
+}
+
+message GSubscriptionInfoList {
+  repeated GSubscriptionInfo infos = 1;
+}
+
+message GTurnstileEvent {
+  string id = 1;
+  google.protobuf.Timestamp date = 2;
+}
+
+message GStat {
+  string id = 1;
+  GUserName userName = 2;
+  map<int32, int32> weekStat = 3;
+  repeated int32 visitsAtWeek = 4;
+  repeated int64 visitsDuration = 5;
+  google.protobuf.Timestamp purchaseDate = 6;
+  google.protobuf.Timestamp lastEnter = 7;
+}
+
+message GStatList {
+  repeated GStat stats = 1;
+}

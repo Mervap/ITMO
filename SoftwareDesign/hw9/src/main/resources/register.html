@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css" media="screen"/>
+    <title>Hw2</title>
+    <script>
+        function register(f) {
+            let req = new XMLHttpRequest();
+            req.onload = () => {
+                if (req.status === 200) {
+                    window.location.replace("/index")
+                } else {
+                    alert(req.responseText)
+                }
+            }
+            req.open('POST', '/register', true);
+            let data = new URLSearchParams();
+            new FormData(f).forEach((value, key) => { data.append(key, value) });
+            req.send(data);
+        }
+    </script>
+</head>
+<body>
+<main>
+    <form onsubmit="register(this); return false;">
+        <div class="container">
+            <h2>Register</h2>
+            <input type="text" placeholder="Login" name="login" required>
+            <hr>
+            <input type="password" placeholder="Password" name="password" required>
+            <hr>
+            <select name="yePref" required>
+                <option>USD</option>
+                <option>EUR</option>
+                <option>RUB</option>
+            </select>
+            <hr>
+            <div>
+                <button type="submit" class="register">Register</button>
+            </div>
+        </div>
+
+        <div class="container signin">
+            <p>Already have an account? <a href="/login">Sign in</a>.</p>
+        </div>
+    </form>
+</main>
+</body>
+</html>

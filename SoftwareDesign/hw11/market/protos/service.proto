@@ -1,0 +1,51 @@
+syntax = "proto3";
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
+
+option java_package = "me.mervap.market";
+option java_multiple_files = true;
+
+package me.mervap;
+
+service MarketService {
+  rpc newCompany(GCompanyDesc) returns (GCommandResponse) {}
+  rpc newStock(GStockDesc) returns (GCommandResponse) {}
+  rpc buyStock(GOpStokDesc) returns (GCommandResponse) {}
+  rpc sellStock(GOpStokDesc) returns (GCommandResponse) {}
+
+  rpc companyList(google.protobuf.Empty) returns (GCompanyDescList) {}
+  rpc stocksList(google.protobuf.Empty) returns (GStockDescList) {}
+}
+
+message GCompanyDesc {
+  int32 id = 1;
+  string name = 2;
+  string country = 3;
+}
+
+message GCompanyDescList {
+  repeated GCompanyDesc companies = 1;
+}
+
+message GStockDesc {
+  int32 id = 1;
+  int32 companyId = 2;
+  string name = 3;
+  double price = 4;
+  int32 totalCount = 5;
+}
+
+message GStockDescList {
+  repeated GStockDesc stocks = 1;
+}
+
+message GOpStokDesc {
+  int32 id = 1;
+  int32 count = 2;
+  double budget = 3;
+}
+
+message GCommandResponse {
+  bool ok = 1;
+  string message = 2;
+}

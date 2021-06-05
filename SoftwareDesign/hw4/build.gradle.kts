@@ -61,3 +61,9 @@ tasks.asciidoctor {
 //  inputs.dir(snippetsDir)
 //  dependsOn(test)
 }
+
+addc 0 Tesla USA
+Ok!
+adds 0 0 Tesla 10000
+Ok!
+adds 0 1 Tesla 10000
