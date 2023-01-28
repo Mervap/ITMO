@@ -31,3 +31,15 @@
 [submodule "numerical-methods"]
 	path = numerical-methods
 	url = https://github.com/mikeTerentev/numerical-methods
+[submodule "Compilers"]
+	path = Compilers
+	url = git@github.com:Mervap/compilers-supplementary.git
+[submodule "GANs"]
+	path = GANs
+	url = git@github.com:Mervap/GANs.git
+[submodule "ParallelAlgorithms"]
+	path = ParallelAlgorithms
+	url = git@github.com:Mervap/ParallelAlgorithms.git
+[submodule "Verification"]
+	path = Verification
+	url = git@github.com:Mervap/Verification.git
